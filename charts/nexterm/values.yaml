@@ -21,7 +21,7 @@ persistence:
 ingress:
   enabled: true
   name: ""
- ingressClassName: ""
+  ingressClassName: ""
   nginx:
     enabled: false
   annotations:
