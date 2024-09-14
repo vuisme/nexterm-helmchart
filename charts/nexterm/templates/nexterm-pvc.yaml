@@ -8,3 +8,4 @@ spec:
   resources:
     requests:
       storage: {{ .Values.persistence.resources.requests.storage }}
+  storageClassName: {{ .Values.persistence.storageClass | default "local" }}

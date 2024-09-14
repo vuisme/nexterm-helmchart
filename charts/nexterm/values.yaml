@@ -11,8 +11,26 @@ service:
 
 persistence:
   enabled: true
+  storageClass: "local"
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 500Mi
+
+ingress:
+  enabled: true
+  name: ""
+ ingressClassName: ""
+  nginx:
+    enabled: false
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"  # Thay đổi theo yêu cầu
+  hosts:
+    - host: term.s1.vutn.net
+      paths:
+        - /
+  tls:
+    - hosts:
+      - term.s1.vutn.net
+      secretName: termchart--tls
