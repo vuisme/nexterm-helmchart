@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  nexterm-chart:
+  - apiVersion: v2
+    created: "2024-09-14T17:44:54.737979293Z"
+    description: A Helm chart for deploying Nexterm application
+    digest: da1665d1396595caa5cb9a91493853f3e565908c536e1b5ef4e2e881b92b7cec
+    name: nexterm-chart
+    urls:
+    - https://github.com/vuisme/nexterm-helmchart/releases/download/nexterm-chart-0.1.0/nexterm-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-09-14T17:44:54.737989833Z"
