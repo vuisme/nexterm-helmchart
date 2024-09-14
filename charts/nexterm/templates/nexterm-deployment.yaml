@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-nexterm
+  labels:
+    app: nexterm
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: nexterm
+  template:
+    metadata:
+      labels:
+        app: nexterm
+    spec:
+      containers:
+        - name: nexterm
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 6989
+          volumeMounts:
+            - name: nexterm-storage
+              mountPath: /app/data
+      volumes:
+        - name: nexterm-storage
+          persistentVolumeClaim:
+            claimName: nexterm-pvc
