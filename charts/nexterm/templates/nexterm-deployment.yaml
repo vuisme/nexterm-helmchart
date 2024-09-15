@@ -1,21 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-nexterm
+  name: {{ include "nexterm.fullname" . }}
   labels:
-    app: nexterm
+    {{- include "nexterm.labels" . | nindent 4 }}
 spec:
+  {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
+  {{- end }}
   selector:
     matchLabels:
-      app: nexterm
+      {{- include "nexterm.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        app: nexterm
+        {{- include "nexterm.selectorLabels" . | nindent 8 }}
     spec:
       containers:
-        - name: nexterm
+        - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
