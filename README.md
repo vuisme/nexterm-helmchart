@@ -2,6 +2,7 @@
 
 ![Version](https://img.shields.io/github/v/release/vuisme/nexterm-helmchart)
 [![Release Charts](https://github.com/vuisme/nexterm-helmchart/actions/workflows/release-helm-repo.yml/badge.svg)](https://github.com/vuisme/nexterm-helmchart/actions/workflows/release-helm-repo.yml)
+
 The Nexterm Helm Chart provides Helm charts for deploying the Nexterm application on Kubernetes.
 
 ## Version
