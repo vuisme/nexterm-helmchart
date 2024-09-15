@@ -3,7 +3,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "nexterm-chart.fullname" . }}
+  name: {{ include "nexterm.fullname" . }}
   annotations:
     {{- toYaml .Values.ingress.annotations | nindent 4 }}
 spec:
@@ -18,7 +18,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ include "nexterm-chart.fullname" . }}
+                name: {{ include "nexterm.fullname" . }}
                 port:
                   number: {{ $.Values.service.port }}
           {{- end }}
