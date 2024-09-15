@@ -1,4 +1,4 @@
 apiVersion: v2
 name: nexterm-chart
 description: An unonfficial Helm chart for deploying Nexterm application.
-version: 0.2.0
+version: 0.2.1
