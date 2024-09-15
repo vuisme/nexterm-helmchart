@@ -2,7 +2,8 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: {{ include "nexterm.fullname" . }}-pvc
-  label: {{- include "nexterm.labels" . | nindent 4 }}
+  labels:
+    {{- include "nexterm.labels" . | nindent 4 }}
 spec:
   accessModes:
     {{- range .Values.persistence.accessModes }}
