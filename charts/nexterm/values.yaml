@@ -1,3 +1,6 @@
+nameOverride: ""
+fullnameOverride: ""
+
 replicaCount: 1
 autoscaling:
   enabled: false  # Mặc định hoặc giá trị có thể được ghi đè
