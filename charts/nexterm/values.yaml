@@ -24,17 +24,16 @@ persistence:
 
 ingress:
   enabled: true
-  name: ""
   ingressClassName: ""
-  nginx:
-    enabled: false
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
   hosts:
-    - host: term.s1.vutn.net
+    # Your URL
+    - host: ""
       paths:
         - /
   tls:
     - hosts:
-      - term.s1.vutn.net
+      # Your URL
+      - ""
       secretName: termchart--tls
