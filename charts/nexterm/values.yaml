@@ -3,7 +3,7 @@ fullnameOverride: ""
 
 replicaCount: 1
 autoscaling:
-  enabled: false  # Mặc định hoặc giá trị có thể được ghi đè
+  enabled: false
 image:
   repository: germannewsmaker/nexterm
   tag: 1.0.1-OPEN-PREVIEW
@@ -29,7 +29,7 @@ ingress:
   nginx:
     enabled: false
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"  # Thay đổi theo yêu cầu
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
   hosts:
     - host: term.s1.vutn.net
       paths:
