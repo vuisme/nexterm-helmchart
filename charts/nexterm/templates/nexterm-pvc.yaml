@@ -4,7 +4,9 @@ metadata:
   name: nexterm-pvc
 spec:
   accessModes:
-    - {{ .Values.persistence.accessModes[0] }}
+    {{- range .Values.persistence.accessModes }}
+    - {{ . }}
+    {{- end }}
   resources:
     requests:
       storage: {{ .Values.persistence.resources.requests.storage }}
